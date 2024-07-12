@@ -520,8 +520,10 @@ body {
 }
 
 .tree-list {
-  max-width: 1200px;
-  margin: 40px auto;
+  max-width: 70rem;
+  min-height: 41rem;
+  margin:  auto;
+  margin-top: 12rem;
   padding: 20px;
   /* background-color: teal; */
   background-color: #416f5d;
@@ -530,7 +532,7 @@ body {
   /* filter: blur(10px); */
   /* filter: fill-opacity(10px); */
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .tree-list img{
@@ -559,6 +561,7 @@ body {
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
   padding: 20px;
   text-align: center;
+  color: #954b63 !important;
 }
 
 .tree-card img {
@@ -588,53 +591,89 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
+
+
+
 /* Edit Forest List */
+
+
+.edit-forest-main{
+  background-color: teal ;
+
+}
+
+
+
 .edit-forest {
-  max-width: 1000px;
-  margin: 150px auto;
+  max-width: 70rem;
+  min-height: 41rem;
+  margin: auto;
+  margin-top: 12rem;
   padding: 20px;
   /* backdrop-filter: blur(0.5px); */
   border-radius: 10px;
-  border: 1px solid #ddd;
-  background-color:rgba(255, 255, 255, 0.4) ;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid #ddd; */
+  background-color: rgb(0, 140, 140);
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.edit-forest h2 {
-  margin-top: 0;
-  margin-bottom: 20px;
+.edit-forest h1 {
+  margin-left: 4.5rem;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
   font-weight: bold;
-  color: #0d2546;
+  color: whitesmoke;
 }
 
-.edit-forest form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
+.add-tree-list {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 40px;
 }
 
-.edit-forest label {
-  font-weight: bold;
-  color: #0d2546;
-  margin-bottom: 10px;
+.add-tree-list label {
   display: block;
+  text-align: left;
+  margin-bottom: 10px;
+  color: white;
 }
 
-.edit-forest input {
-  width: 200px;
+.add-tree-list input {
+  width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 20px;
 }
 
+.add-tree-list button[type="submit"] {
+  width: 103%;
+  height: 5%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px !important;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-tree-list button[type="submit"]:hover {
+  background-color: #444;
+}
+
+.add-tree-list button[type="submit"]:active {
+  background-color: #555;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
 .add-tree-list li{
   padding: 10px;
-  color: #0d2546;
+  color: whitesmoke;
 }
 
 .edit-forest button[type="submit"] {
@@ -680,6 +719,7 @@ body {
   flex-direction: row;
   height: 10;
   margin: 0;  
+  background-color: #701e09bb;
 }
 
 
@@ -703,12 +743,19 @@ body {
 }
 
 .animals-list {
-  max-width: 1200px;
-  margin: 40px auto;
+  max-width: 70rem;
+  min-height: 41rem;
+  margin:  auto;
+  margin-top: 12rem;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  /* background-color: teal; */
+  background-color: #f28e65;
+  /* background-image: url("images/forest-list-bgimage.jpg");
+  background-repeat: repeat; */
+  /* filter: blur(10px); */
+  /* filter: fill-opacity(10px); */
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .animals-list h1 {
@@ -724,9 +771,11 @@ body {
 }
 
 .animals-card {
-  margin: 20px !important;
-  width: 250px;
-  background-color: #6856367d !important;
+  margin: 2rem !important;
+  background-color: whitesmoke !important;
+  width: 20% !important;
+  /* height: 10% !important; */
+  color: #fba70e !important;
   border-radius: 20px !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -764,59 +813,83 @@ body {
 
 /* Add Animals */
 
+.edit-animal-main{
+  background-color: #762613bb;
+}
+
 
 .edit-animal {
-  max-width: 1000px;
-  margin: 150px auto;
+  max-width: 70rem;
+  min-height: 41rem;
+  margin: auto;
+  margin-top: 12rem;
   padding: 20px;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(0.5px); */
   border-radius: 10px;
-  border: 1px solid #ddd;
-  background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid #ddd; */
+  background-color: #f28d65c4;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.edit-animal h2 {
-  color: #0d2546 !important;
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: #333;
+.add-animal-list h1{
+  margin-left: 6em;
 }
 
-.edit-animal form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
+.add-animal-list {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 40px;
 }
 
-.edit-animal label {
-  font-weight: bold;
-  color: #0d2546;
-  margin-bottom: 10px;
+.add-animal-list label {
   display: block;
+  text-align: left;
+  margin-bottom: 10px;
+  color: black;
 }
 
-.edit-animal input {
-  width: 200px;
+.add-animal-list input {
+  width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 20px;
 }
 
-.animal-list li{
+.add-animal-list button[type="submit"] {
+  width: 103%;
+  height: 5%;
+  background-color: white;
+  color: #fff;
+  padding: 10px 20px !important;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-animal-list button[type="submit"]:hover {
+  background-color: white;
+}
+
+
+.add-animal-list button[type="submit"]:active {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.add-animal-list li{
   padding: 10px;
-  color: #0d2546;
+  color: whitesmoke;
 }
 
 .edit-animal button[type="submit"] {
-  background-color: #333;
-  color: #fff;
+  background-color: white;
+  color: black;
   padding: 0px 20px;
   max-height: 32px;
   border: none;
@@ -852,19 +925,26 @@ body {
   border-radius: 4px;
 }
 
-
 /* Visitors Page */
 
+.visitor-page-main{
+  /* background-color: #FFD3B6; */
+  background-color: #DCA47C;
+
+}
 
 .visitor-page {
   display: flex;
   max-width: 1200px;
   margin:auto;
+  margin-bottom: 0rem;
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
-  margin-bottom: 100px;
-  background-color: #f9f9f967;
+  /* margin-bottom: 100px; */
+  /* background-color: #DCA47C; */
+  background-color: #FFD3B6;
+
   color: black;
   padding: 20px;
   border: 1px solid #ddd;
@@ -962,9 +1042,10 @@ body {
   backdrop-filter: blur(10px);
 }
 
+/* .privacy */
 /* Terms of Services */
 
-.terms{
+/* .terms{
   max-width: 1200px;
   
   margin:auto;
@@ -976,4 +1057,26 @@ body {
   padding: 10px;
   color: white;
   backdrop-filter: blur(10px);
+} */
+
+
+.terms-main{
+  color: black;
+  
 }
+
+.terms h2{
+  color: black;
+  justify-content: left;
+  /* margin-right: 72rem; */
+  margin-left: 0%;
+}
+
+.terms{
+  /* align-items; */
+  margin:10rem;
+  margin-top: 0rem; ;
+  text-align: justify;
+
+}
+

@@ -29,7 +29,12 @@ const VisitorsPage = () => {
   return (
       <div className="visitor-page-main" id="visitor-page">
 
-            <HandleNav />
+<div className="top-container">
+        <div className="logo">
+          <h1>Greenify</h1>
+        </div>
+        <HandleNav />
+         </div>
             <div className="visitor-page">
           
           <div className="new-visitor-form">
@@ -39,7 +44,7 @@ const VisitorsPage = () => {
             </center>
             
             <form onSubmit={handleSubmit}>
-              <label>
+              {/* <label>
                 Name:
                 <input type="text" name="name" value={newVisitor.name} onChange={handleInputChange} autoComplete="no" required />
               </label>
@@ -54,6 +59,46 @@ const VisitorsPage = () => {
                 <input type="tel" name="phone" pattern="[0-9]{10}" value={newVisitor.phone} onChange={handleInputChange} autoComplete="no" />
               </label>
               
+              <button type="submit">Add Visitor</button> */}
+              <label>
+                Name:
+                <input type="text" name="name" value={newVisitor.name} onChange={handleInputChange} autoComplete="no" required />
+              </label>
+              <label>
+                Age:
+                <input type="number" name="age" value={newVisitor.age} onChange={handleInputChange} autoComplete="no" required />
+              </label>
+              <label>
+                Date of Visit:
+                <input type="date" name="date" value={newVisitor.date_of_visit} onChange={handleInputChange} autoComplete="off" required />
+              </label>
+              <label>
+                Expiration of Visit:
+                <input type="date" name="date" value={newVisitor.expiration} onChange={handleInputChange} autoComplete="off" required />
+              </label>
+
+            <label>
+              Image:
+              <input
+                type="file"
+                name="image"
+                accept=".jpg, .jpeg"
+                onChange={handleInputChange}
+                required
+                // style={{alignContent:"center"}}
+              />
+              </label>
+
+              <label>
+                Id-Proof:
+                <input
+                type="file"
+                name="idProof"
+                accept=".jpg, .jpeg"
+                onChange={handleInputChange}
+                required
+                />
+              </label>
               <button type="submit">Add Visitor</button>
             </form>
 

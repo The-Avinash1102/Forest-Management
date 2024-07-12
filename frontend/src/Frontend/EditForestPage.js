@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import HandleNav from "./Navigation";
-import { fetchPlantData } from "./requests/requests";
 
 const AddTree = () => {
   const [treeList, setTreeList] = useState([
@@ -10,8 +9,6 @@ const AddTree = () => {
   ]);
 
   const [newTree, setNewTree] = useState({ name: "", species: "", age: "", location: "", image: null });
-
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,19 +26,15 @@ const AddTree = () => {
 
   return (
     <div className="edit-forest-main" id="edit-forest">
-      <div className="navigation" id="navigation">
+      <div className="top-container">
+        <div className="logo">
+          <h1>Greenify</h1>
+        </div>
         <HandleNav />
-      </div>
+         </div>
       <div className="edit-forest">
         <div className="add-tree-list">
-          <h2>Tree List</h2>
-          <ul>
-            {treeList.map((tree) => (
-              <li key={tree.id}>
-                {tree.name} ({tree.species}) - Age: {tree.age}, Location: {tree.location}
-              </li>
-            ))}
-          </ul>
+          <h1>Name your Contribution</h1>
           <form onSubmit={handleSubmit}>
             <label>
               Name:
@@ -50,6 +43,7 @@ const AddTree = () => {
                 name="name"
                 value={newTree.name}
                 onChange={handleInputChange}
+                required
               />
             </label>
             <label>
@@ -59,6 +53,7 @@ const AddTree = () => {
                 name="species"
                 value={newTree.species}
                 onChange={handleInputChange}
+                required
               />
             </label>
             <label>
@@ -68,6 +63,7 @@ const AddTree = () => {
                 name="age"
                 value={newTree.age}
                 onChange={handleInputChange}
+                required
               />
             </label>
             <label>
@@ -77,6 +73,7 @@ const AddTree = () => {
                 name="location"
                 value={newTree.location}
                 onChange={handleInputChange}
+                required
               />
             </label>
             <label>
@@ -86,10 +83,19 @@ const AddTree = () => {
                 name="image"
                 accept=".jpg, .jpeg"
                 onChange={handleInputChange}
+                required
               />
             </label>
             <button type="submit">Add Tree</button>
           </form>
+
+          <ul>
+            {treeList.map((tree) => (
+              <li key={tree.id}>
+                {tree.name} ({tree.species}) - Age: {tree.age}, Location: {tree.location}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

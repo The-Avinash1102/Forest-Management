@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 const fetchAnimalDataURI = 'http://127.0.0.1:5000/Animals/Entry';
-const SetPlantDataURI = 'http://127.0.0.1:5000/Plant/Register';
+const SetPlantDataURI = 'http://127.0.0.1:5000//Plant/Register';
 const fetchPlantDataURI = 'http://127.0.0.1:5000/Plant/Entry';
 const SetAnimalsDataURI = 'http://127.0.0.1:5000//Animals/Register';
-const SetUserDataURI = ''
+
 
 
 export const fetchAnimalData = async (setAnimals) => {
@@ -35,19 +35,16 @@ export const SetAnimalData= async (data)=>{
         console.error('Error fetching animals:',error);
     }
 };
-export const SetUserData=async (data)=>{
-  try{
-    axios.post(Set)
-  }
-}
 
 export const fetchPlantData = async (setPlants) => {
     try {
       const response = await axios.get(fetchPlantDataURI);
+      console.log(response.data);
       setPlants(response.data.response);
       console.log(response.data.response);
+      console.log("i exist");
     } 
     catch (error) {
-      console.error('Error fetching Plant:', error);
+      console.error('Error fetching plants:', error);
     }
 };

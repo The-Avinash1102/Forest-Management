@@ -25,17 +25,15 @@ const AddAnimal = () => {
     return(
         
         <div className="edit-animal-main" id="edit-animal">
-                <HandleNav />
+               <div className="top-container">
+        <div className="logo">
+          <h1>Greenify</h1>
+        </div>
+        <HandleNav />
+         </div>
                 <div className="edit-animal">
-            <div className="animal-list">
-                <h2>Animal List</h2>
-                <ul>
-                    {animalList.map((animal) => (
-                        <li key={animal.id}>
-                            {animal.name}  ({animal.species})
-                        </li>
-                    ))}
-                </ul>
+            <div className="add-animal-list">
+                <h1>Animal List</h1>
                 <form onSubmit={handleSubmit}>
             <label>
               Name:
@@ -55,8 +53,47 @@ const AddAnimal = () => {
                 onChange={handleInputChange}
               />
             </label>
+            <label>
+              Age:
+              <input
+                type="number"
+                name="age"
+                value={newAnimal.age}
+                onChange={handleInputChange}
+                required
+              />
+            </label>
+            <label>
+              Location:
+              <input
+                type="text"
+                name="location"
+                value={newAnimal.location}
+                onChange={handleInputChange}
+                required
+              />
+            </label>
+            <label>
+              Image:
+              <input
+                type="file"
+                name="image"
+                accept=".jpg, .jpeg"
+                onChange={handleInputChange}
+                required
+                // style={{alignContent:"center"}}
+              />
+              </label>
             <button type="submit">Add Animal</button>
           </form>
+
+          <ul>
+                    {animalList.map((animal) => (
+                        <li key={animal.id}>
+                            {animal.name}  ({animal.species})
+                        </li>
+                    ))}
+                </ul>
         </div>
         </div>
       </div>
