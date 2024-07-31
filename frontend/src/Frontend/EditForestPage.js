@@ -1,20 +1,27 @@
 import React, { useState } from "react";
-import HandleNav from "./Navigation";
-
+// import HandleNav from "./Navigation";
+import Top from "./Top";
+import { SetPlantData } from "./requests/requests";
 const AddTree = () => {
-  const [treeList, setTreeList] = useState([
-    { id: 1, name: "Oak Tree", species: "Quercus robur", age: 10, location: "Park", image: "" },
-    { id: 2, name: "Pine Tree", species: "Pinus sylvestris", age: 20, location: "Garden", image: "" },
-    { id: 3, name: "Maple Tree", species: "Acer saccharum", age: 30, location: "Forest", image: "" },
-  ]);
+  const [treeList, setTreeList] = useState(
+  null)
+  // [
+  //   { id: 1, name: "Oak Tree", species: "Quercus robur", age: 10, location: "Park", image: "" },
+  //   { id: 2, name: "Pine Tree", species: "Pinus sylvestris", age: 20, location: "Garden", image: "" },
+  //   { id: 3, name: "Maple Tree", species: "Acer saccharum", age: 30, location: "Forest", image: "" },
+  // ]);
 
   const [newTree, setNewTree] = useState({ name: "", species: "", age: "", location: "", image: null });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setTreeList([...treeList, { id: treeList.length + 1, ...newTree }]);
+  const ONSUBMIT =()=>{
+    SetPlantData(newTree);
     setNewTree({ name: "", species: "", age: "", location: "", image: null });
-  };
+  }
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setTreeList([...treeList, { id: treeList.length + 1, ...newTree }]);
+  //   setNewTree({ name: "", species: "", age: "", location: "", image: null });
+  // };
 
   const handleInputChange = (e) => {
     if (e.target.name === "image") {
@@ -26,16 +33,11 @@ const AddTree = () => {
 
   return (
     <div className="edit-forest-main" id="edit-forest">
-      <div className="top-container">
-        <div className="logo">
-          <h1>Greenify</h1>
-        </div>
-        <HandleNav />
-         </div>
+      <Top />
       <div className="edit-forest">
         <div className="add-tree-list">
           <h1>Name your Contribution</h1>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={ONSUBMIT}>
             <label>
               Name:
               <input
@@ -76,7 +78,7 @@ const AddTree = () => {
                 required
               />
             </label>
-            <label>
+            {/* <label>
               Image:
               <input
                 type="file"
@@ -85,17 +87,17 @@ const AddTree = () => {
                 onChange={handleInputChange}
                 required
               />
-            </label>
+            </label> */}
             <button type="submit">Add Tree</button>
           </form>
-
+{/* 
           <ul>
             {treeList.map((tree) => (
               <li key={tree.id}>
                 {tree.name} ({tree.species}) - Age: {tree.age}, Location: {tree.location}
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div>

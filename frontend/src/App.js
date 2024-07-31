@@ -8,7 +8,8 @@ import VisitorsPage from './Frontend/VisitorPage';
 import Chatbot from './Frontend/Chatbot';
 import PrivacyPolicy from './Frontend/Policy';
 import TermsOfService from './Frontend/Terms';
-
+import ShowVisitors from './Frontend/showVsitor';
+  
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/termsOfService" element={<TermsOfService />} />
+        <Route path="showVisitor-page" element = {<ShowVisitors />} />
       </Routes>
     </Router>
   );

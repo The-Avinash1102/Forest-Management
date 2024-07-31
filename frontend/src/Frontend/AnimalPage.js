@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Tilt from 'react-vanilla-tilt';
 import './style.css';
-import HandleNav from "./Navigation";
+// import HandleNav from "./Navigation";
+import Top from './Top';
 import { fetchAnimalData } from './requests/requests';
 // const animals = [
 //   {
@@ -53,19 +54,14 @@ const AnimalPage = () => {
   return (
     
       <div className="animal-page" id="animal-page">
-        <div className="top-container">
-        <div className="logo">
-          <h1>Greenify</h1>
-        </div>
-        <HandleNav />
-         </div>
+        <Top />
         
         <div className="animals-list"><center>
           <h1>Animals in the Forest</h1></center>
           <div className="animals-cards">
           {animals && animals.map((animal) => (
             <Tilt key={animal.id} className="animals-card" options={{ max: 25, speed: 5000, glare:true, 'ax-glare': 0.5 }}>
-            <img src={animal.image} alt={animal.name} />
+            {/* <img src={animal.image} alt={animal.name} /> */}
               <h2>{animal.name}</h2>
               <p>Species: {animal.species}</p>
               <p>Age: {animal.age} years</p>

@@ -1,16 +1,19 @@
 import React from "react";
 import { useState } from "react";
-// import Top from "./Top";
-import HandleNav from "./Navigation";
+import Top from "./Top";
+// import HandleNav from "./Navigation";
+import { SetAnimalData } from "./requests/requests";
 
 const AddAnimal = () => {
-    const [animalList, setAnimalList] = useState([
-        { id: 1, name: "Lion", species: "Panthera leo"},
-        { id: 1, name: "Tiger", species: "Panthera tigris"},
-        { id: 1, name: "Elephant", species: "Loxodonta africana"}
-    ]);
+    const [animalList, setAnimalList] = useState(null);
 
     const [newAnimal,setNewAnimal] = useState({ name: "", species: ""});
+
+    const ONSUBMIT =()=>{
+      SetAnimalData(newAnimal);
+      console.log(animalList);
+      setNewAnimal({ name: "", species: "", age: "", location: ""});
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,16 +28,11 @@ const AddAnimal = () => {
     return(
         
         <div className="edit-animal-main" id="edit-animal">
-               <div className="top-container">
-        <div className="logo">
-          <h1>Greenify</h1>
-        </div>
-        <HandleNav />
-         </div>
+               <Top />
                 <div className="edit-animal">
             <div className="add-animal-list">
                 <h1>Animal List</h1>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={ONSUBMIT}>
             <label>
               Name:
               <input autoComplete="off"
@@ -73,7 +71,7 @@ const AddAnimal = () => {
                 required
               />
             </label>
-            <label>
+            {/* <label>
               Image:
               <input
                 type="file"
@@ -83,17 +81,17 @@ const AddAnimal = () => {
                 required
                 // style={{alignContent:"center"}}
               />
-              </label>
+              </label> */}
             <button type="submit">Add Animal</button>
           </form>
 
-          <ul>
+          {/* <ul>
                     {animalList.map((animal) => (
                         <li key={animal.id}>
                             {animal.name}  ({animal.species})
                         </li>
                     ))}
-                </ul>
+                </ul> */}
         </div>
         </div>
       </div>

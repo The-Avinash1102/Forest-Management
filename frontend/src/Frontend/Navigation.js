@@ -14,8 +14,9 @@ const HandleNav = () => {
           <li><Link to="/edit-forest">Add Trees</Link></li>
           <li><Link to="/animal-page">Animals</Link></li>
           <li><Link to="/edit-animal">Add Animals</Link></li>
-          <li><Link to="/visitors-page">Visitors</Link></li>
-          <li><Link to="/chatbot">Help Desk</Link></li>
+          <li><Link to="/showVisitor-page">Visitors</Link></li>
+          <li><Link to="/visitors-page">Add Visitors</Link></li>
+          {/* <li><Link to="/chatbot">Help Desk</Link></li> */}
         </ul>
         </nav>
         

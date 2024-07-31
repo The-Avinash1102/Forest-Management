@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
-import HandleNav from "./Navigation";
-
+// import HandleNav from "./Navigation";
+import Top from "./Top";
+import { SetUserData } from "./requests/requests";
 
 const VisitorsPage = () => {
   const [visitors, setVisitors] = useState([]); // initialize an empty array to store visitor data
   const [newVisitor, setNewVisitor] = useState({ name: "", email: "", phone: "" }); // initialize an empty object to store new visitor data
 
-  useEffect(() => {
-    // fetch visitor data from your API or database
-    fetch('/api/visitors') // replace with your API endpoint
-    .then(response => response.json())
-    .then(data => setVisitors(data));
-  }, []);
+  const ONSUBMIT=()=>{
+    SetUserData(newVisitor);
+    setNewVisitor({ name: "", email: "", phone: "" });
+  }
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -29,12 +28,7 @@ const VisitorsPage = () => {
   return (
       <div className="visitor-page-main" id="visitor-page">
 
-<div className="top-container">
-        <div className="logo">
-          <h1>Greenify</h1>
-        </div>
-        <HandleNav />
-         </div>
+<Top />
             <div className="visitor-page">
           
           <div className="new-visitor-form">
@@ -43,7 +37,7 @@ const VisitorsPage = () => {
               <p>Each step brings you closer to discovering hidden treasures</p>
             </center>
             
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={ONSUBMIT}>
               {/* <label>
                 Name:
                 <input type="text" name="name" value={newVisitor.name} onChange={handleInputChange} autoComplete="no" required />
@@ -70,14 +64,14 @@ const VisitorsPage = () => {
               </label>
               <label>
                 Date of Visit:
-                <input type="date" name="date" value={newVisitor.date_of_visit} onChange={handleInputChange} autoComplete="off" required />
+                <input type="text" name="date" placeholder="yyyy/mm/dd" value={newVisitor.date_of_visit} onChange={handleInputChange} autoComplete="off" required />
               </label>
               <label>
-                Expiration of Visit:
-                <input type="date" name="date" value={newVisitor.expiration} onChange={handleInputChange} autoComplete="off" required />
+                Duration:
+                <input type="text" name="date" placeholder="yyyy/mm/dd" value={newVisitor.expiration} onChange={handleInputChange} autoComplete="off" required />
               </label>
 
-            <label>
+            {/* <label>
               Image:
               <input
                 type="file"
@@ -98,23 +92,9 @@ const VisitorsPage = () => {
                 onChange={handleInputChange}
                 required
                 />
-              </label>
+              </label> */}
               <button type="submit">Add Visitor</button>
             </form>
-
-            <div className="visitor-list">
-            <center><h2>VISITORS LIST</h2></center>
-            
-            <ul>
-              {visitors.map((visitor, index) => (
-                <li key={index}>
-                  <p>Name: {visitor.name}</p>
-                  <p>Email: {visitor.email}</p>
-                  <p>Phone: {visitor.phone}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
           </div>
           </div>
         

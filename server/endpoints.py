@@ -72,8 +72,8 @@ app.config['MONGO_URI'] = os.environ['MONGO_URI']
 @app.route('/Visitors/Register', methods=['POST'])
 def VisitorsRegister():
     try:
-        image = request.json.get('image')
-        id_proof = request.json.get('id_proof')
+        # image = request.json.get('image')
+        # id_proof = request.json.get('id_proof')
         name = request.json.get('name')
         age = request.json.get('age')
         date_of_visitation = request.json.get('date_of_visitation')
@@ -81,8 +81,8 @@ def VisitorsRegister():
 
         Users.insert_one(
             {
-                "image": image,
-                "id_proof": id_proof,
+                # "image": image,
+                # "id_proof": id_proof,
                 "name": name,
                 "age": age,
                 "date_of_visitation": date_of_visitation,
@@ -103,7 +103,7 @@ def AnimalsRegister():
         species = request.json.get("species")
         age = request.json.get("age")
         location = request.json.get("location")
-        image = request.json.get("image")
+        # image = request.json.get("image")
         rarity = request.json.get("rarity")
 
         Animals.insert_one({
@@ -112,7 +112,7 @@ def AnimalsRegister():
             "species": species,
             "age": age,
             "location": location,
-            "image": image,
+            # "image": image,
             "rarity": rarity
         })
         return jsonify({"response": "request successful"})
@@ -124,22 +124,22 @@ def AnimalsRegister():
 @app.route('/Plant/Register', methods=['POST'])
 def PlantsRegister():
     try:
-        id = request.json.get("id")
+        # id = request.json.get("id")
         name = request.json.get("name")
         species = request.json.get("species")
         age = request.json.get("age")
         location = request.json.get("location")
-        image = request.json.get("image")
-        rarity = request.json.get("rarity")
+        # image = request.json.get("image")
+        # rarity = request.json.get("rarity")
 
         Plants.insert_one({
-            "id": id,
+            # "id": id,
             "name": name,
             "species": species,
             "age": age,
             "location": location,
-            "image": image,
-            "rarity": rarity
+            # "image": image,
+            # "rarity": rarity
         })
         return jsonify("works")
     except Exception as e:
@@ -246,13 +246,13 @@ def AnimalsEntry():
 
         for doc in collection:  # Iterate through documents in the cursor
             formatted_values.append({
-                "id": doc["id"],
+                # "id": doc["id"],
                 "name": doc["name"],
                 "species": doc["species"],
                 "age": doc['age'],
                 "location": doc['location'],
-                "image": doc["image"],
-                "rarity": doc["rarity"],
+                # "image": doc["image"],
+                # "rarity": doc["rarity"],
                 "_id": str(doc['_id'])
             })
         return jsonify({'response': formatted_values})
@@ -271,13 +271,13 @@ def PlantEntry():
 
         for doc in collection:  # Iterate through documents in the cursor
             formatted_values.append({
-                "id": doc["id"],
+                # "id": doc["id"],
                 "name": doc["name"],
                 "species": doc["species"],
                 "age": doc['age'],
                 "location": doc['location'],
-                "image": doc["image"],
-                "rarity": doc["rarity"],
+                # "image": doc["image"],
+                # "rarity": doc["rarity"],
                 "_id": str(doc['_id'])
             })
         return jsonify({'response': formatted_values})
@@ -301,8 +301,8 @@ def VisitorsEntry():
 
         for doc in collection:  # Iterate through documents in the cursor
             formatted_values.append({
-                "image": doc['image'],
-                "id_proof": doc['id_proof'],
+                # "image": doc['image'],
+                # "id_proof": doc['id_proof'],
                 "name": doc['name'],
                 "age": doc['age'],
                 "date_of_visitation": doc["date_of_visitation"],
