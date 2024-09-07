@@ -4,6 +4,7 @@ import './style.css';
 // import HandleNav from "./Navigation";
 import Top from './Top';
 import { fetchAnimalData } from './requests/requests';
+// import forest from './images/forest.jpeg';
 // const animals = [
 //   {
 //     id: 1,
@@ -50,6 +51,10 @@ const AnimalPage = () => {
     useEffect(()=>{
       fetchAnimalData(setAnimals)
     },[])
+
+    const [images,setImages] = useState(null);
+
+    // const handleImage ()
   
   return (
     
